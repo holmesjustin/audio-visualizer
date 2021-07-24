@@ -2,7 +2,7 @@ var song;
 var fft;
 var particles = [];
 var img;
-var dropzone;
+var text;
 
 function preload() {
   song = loadSound("bonfire.mp3");
@@ -16,11 +16,9 @@ function setup() {
   rectMode(CENTER);
   fft = new p5.FFT(0.3);
   img.filter(BLUR, 8);
-  playSong();
-}
+  song.pause();
 
-function playSong() {
-  song.play();
+  text = select("#text");
 }
 
 function draw() {
@@ -95,9 +93,11 @@ function mouseClicked() {
   if (song.isPlaying()) {
     song.pause();
     noLoop();
+    text.html("Click To Play");
   } else {
     song.play();
     loop();
+    text.html("Click To Stop");
   }
 }
 

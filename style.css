@@ -7,3 +7,15 @@ body {
 canvas {
   display: block;
 }
+
+h1 {
+  opacity: 0.25;
+  font-size: 40pt;
+  color: white;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+}
