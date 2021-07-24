@@ -16,6 +16,10 @@ function setup() {
   rectMode(CENTER);
   fft = new p5.FFT(0.3);
   img.filter(BLUR, 8);
+  playSong();
+}
+
+function playSong() {
   song.play();
 }
 
@@ -66,8 +70,10 @@ function draw() {
     endShape();
   }
 
-  var p = new Particle();
-  particles.push(p);
+  for (var i = 0; i < 2; i++) {
+    var p = new Particle();
+    particles.push(p);
+  }
 
   for (var i = particles.length - 1; i >= 0; i--) {
     // console.log(particles[i].pos.x, particles[i].pos.y);
